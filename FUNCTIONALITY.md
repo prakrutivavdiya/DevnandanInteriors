@@ -93,7 +93,6 @@ Displayed as a full-width dark/colored band:
 | Projects Completed | 200+ |
 | Years of Experience | 8+ |
 | Happy Clients | 150+ |
-| Design Awards | 15+ |
 
 - Numbers animate (count up) when scrolled into view
 
