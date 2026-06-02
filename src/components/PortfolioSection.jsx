@@ -1,10 +1,14 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PORTFOLIO_ITEMS } from '../constants';
 import { useInView } from '../hooks/useInView';
+import PanoramaViewer, { PANORAMAS } from './PanoramaViewer';
 import './PortfolioSection.css';
+import './PanoramaViewer.css';
 
 export default function PortfolioSection() {
   const [ref, inView] = useInView();
+  const [activePano, setActivePano] = useState(null);
   const featured = PORTFOLIO_ITEMS.slice(0, 6);
 
   return (
@@ -27,7 +31,26 @@ export default function PortfolioSection() {
         <div className="text-center" style={{ marginTop: '52px' }}>
           <Link to="/portfolio" className="btn btn-primary">View All Projects</Link>
         </div>
+
+        {/* 360° Virtual Tour */}
+        <div className="pano-section">
+          <div className="pano-section-header">
+            <span className="section-label">Immersive Experience</span>
+            <h3>360° Virtual Room Tours</h3>
+            <p>Step inside our designs — click any room to explore in full 360°</p>
+          </div>
+          <div className="pano-cards">
+            {PANORAMAS.map(pano => (
+              <div key={pano.id} className="pano-card" onClick={() => setActivePano(pano)}>
+                <img src={pano.src} alt={pano.label} />
+                <div className="pano-card__icon">⟳</div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
+
+      <PanoramaViewer active={activePano} onClose={() => setActivePano(null)} />
     </section>
   );
 }

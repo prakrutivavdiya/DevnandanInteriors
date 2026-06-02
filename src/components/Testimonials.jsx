@@ -42,7 +42,7 @@ export default function Testimonials() {
             <SwiperSlide key={t.id}>
               <div className="testimonial-card">
                 <Stars count={t.rating} />
-                <p className="testimonial-card__text">"{t.text}"</p>
+                {t.text && <p className="testimonial-card__text">"{t.text}"</p>}
                 <div className="testimonial-card__author">
                   <div className="testimonial-card__avatar">
                     {t.name.charAt(0)}

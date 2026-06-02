@@ -15,9 +15,9 @@ export const WORKING_HOURS = "Mon – Sat: 10:00 AM – 7:00 PM";
 
 // ─── Social ───────────────────────────────────────────────────────────────────
 export const SOCIAL_LINKS = {
-  instagram: "https://www.instagram.com/devnandan_interiors_90/",
+  instagram: "https://www.instagram.com/devnandan3d/",
   youtube: "https://www.youtube.com/@devnandaninteriors2748",
-  facebook: "https://www.facebook.com/devnandaninteriors90/",
+  facebook: "https://www.facebook.com/devnandaninteriors3d/",
   whatsapp: "https://wa.me/919099011688",
   linkedin: "https://www.linkedin.com/in/devnandan-interiors-238927243/",
   indiamart: "https://www.indiamart.com/devnandan-interiors/",
@@ -108,6 +108,7 @@ export const PORTFOLIO_CATEGORIES = [
   { id: "office", label: "Office" },
   { id: "commercial", label: "Commercial" },
   { id: "exterior", label: "Exterior" },
+  { id: "360", label: "360° Tour" },
 ];
 
 export const PORTFOLIO_ITEMS = [
@@ -569,37 +570,28 @@ export const STATS = [
 export const TESTIMONIALS = [
   {
     id: 1,
-    name: "Rajesh Mehta",
+    name: "Rathod Ashok",
     location: "Ahmedabad, Gujarat",
-    text: "Devnandan Interiors transformed our home completely. The 3D visualization helped us understand exactly what the final result would look like before any work began. Absolutely thrilled with the outcome!",
+    text: "",
     rating: 5,
   },
   {
     id: 2,
-    name: "Priya Sharma",
-    location: "Bopal, Ahmedabad",
-    text: "Professional team, incredible designs, and delivered on time. Our modular kitchen looks exactly like the 3D render they showed us. Highly recommend to anyone planning a renovation!",
+    name: "Krisha Soni",
+    location: "Ahmedabad, Gujarat",
+    text: "",
     rating: 5,
-  },
-  {
+  },{
     id: 3,
-    name: "Ankit Patel",
-    location: "Surat, Gujarat",
-    text: "We hired them for our office redesign and the results exceeded expectations. The team understood our requirements and delivered a functional, beautiful workspace our entire team loves.",
+    name: "Dharmendra Soni",
+    location: "Ahmedabad, Gujarat",
+    text: "Working with Devnandan Interiors was an absolute dream from start to finish. They truly understood my vision and transformed my space beyond my wildest expectations. I'm so incredibly happy with the beautiful outcome, it's perfect!",
     rating: 5,
-  },
-  {
+  },{
     id: 4,
-    name: "Sneha Joshi",
-    location: "Gandhinagar, Gujarat",
-    text: "The 3D walkthrough they created for our villa project was stunning. It made every design decision so easy and clear. Their attention to detail is truly unmatched.",
-    rating: 5,
-  },
-  {
-    id: 5,
-    name: "Vikram Desai",
-    location: "Vadodara, Gujarat",
-    text: "From concept to completion, Devnandan Interiors maintained excellent communication and delivered a jewellery showroom design that our customers absolutely love walking into.",
+    name: "Jigen Soni",
+    location: "Ahmedabad, Gujarat",
+    text: "So great. Their creative 3D visualization helped me see everything perfectly. They used high quality materials which made a big difference. I loved their impressive design expertise and the stunning interior designs. Project delivery was on time.",
     rating: 5,
   },
 ];
@@ -609,7 +601,7 @@ export const FAQ_ITEMS = [
   {
     id: 1,
     question: "What areas do you serve?",
-    answer: "We primarily serve Ahmedabad and surrounding Gujarat regions, including Surat, Vadodara, and Gandhinagar. We also take on projects across India for clients requiring 3D visualization and design services remotely.",
+    answer: "We serve PAN India. We take on projects across India for clients requiring 3D visualization and design services remotely.",
   },
   {
     id: 2,
@@ -618,8 +610,8 @@ export const FAQ_ITEMS = [
   },
   {
     id: 3,
-    question: "How long does a typical interior design project take?",
-    answer: "Project timelines vary by scope. A single room typically takes 2–4 weeks for design and renders. A full home project runs 6–12 weeks from concept to final render. Construction timelines depend on your contractor.",
+    question: "How long does a typical 3D design project take?",
+    answer: "Project timelines vary by scope. A single room typically takes 2–4 days for design and renders. A full home project runs 6–7 days from concept to final render. Construction timelines depend on your contractor.",
   },
   {
     id: 4,
@@ -630,10 +622,5 @@ export const FAQ_ITEMS = [
     id: 5,
     question: "Can I request changes after seeing the 3D renders?",
     answer: "Absolutely. That's exactly the purpose of the render stage — to allow revisions before any physical work begins. We offer multiple revision rounds to ensure you're completely satisfied with the design.",
-  },
-  {
-    id: 6,
-    question: "Do you handle modular kitchen and wardrobe design?",
-    answer: "Yes, we specialize in modular furniture design including kitchens, wardrobes, TV units, and study areas. We provide detailed 3D previews with your exact dimensions and finish choices before manufacturing.",
   },
 ];

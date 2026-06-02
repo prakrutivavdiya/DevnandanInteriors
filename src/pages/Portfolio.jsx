@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PORTFOLIO_ITEMS, PORTFOLIO_CATEGORIES } from '../constants';
 import Lightbox from '../components/Lightbox';
+import PanoramaViewer, { PANORAMAS } from '../components/PanoramaViewer';
+import '../components/PanoramaViewer.css';
 import './Portfolio.css';
 
 const INITIAL_COUNT = 12;
@@ -10,6 +12,7 @@ export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const [visible, setVisible] = useState(INITIAL_COUNT);
+  const [activePano, setActivePano] = useState(null);
 
   const filtered = activeCategory === 'all'
     ? PORTFOLIO_ITEMS
@@ -47,41 +50,53 @@ export default function Portfolio() {
                 onClick={() => handleCatChange(cat.id)}
               >
                 {cat.label}
-                <span className="filter-tab__count">
+                {/* <span className="filter-tab__count">
                   {cat.id === 'all' ? PORTFOLIO_ITEMS.length : PORTFOLIO_ITEMS.filter(i => i.category === cat.id).length}
-                </span>
+                </span> */}
               </button>
             ))}
           </div>
 
           {/* Grid */}
-          <div className="portfolio-page__grid">
-            {shown.map((item, i) => (
-              <button
-                key={item.id}
-                className="portfolio-page__card"
-                onClick={() => setLightboxIndex(i)}
-              >
-                <img src={item.image} alt={item.title} loading="lazy" />
-                <div className="portfolio-page__overlay">
-                  <span className="portfolio-card__cat">{item.category}</span>
-                  <h4>{item.title}</h4>
-                  <p>{item.description}</p>
-                  <span className="portfolio-page__view">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                    View
-                  </span>
+          {activeCategory === '360' ? (
+            <div className="pano-cards">
+              {PANORAMAS.map(pano => (
+                <div key={pano.id} className="pano-card" onClick={() => setActivePano(pano)}>
+                  <img src={pano.src} alt={pano.label} />
+                  <div className="pano-card__icon">⟳</div>
                 </div>
-              </button>
-            ))}
-          </div>
-
-          {hasMore && (
-            <div className="text-center" style={{ marginTop: '48px' }}>
-              <button className="btn btn-outline-dark" onClick={() => setVisible(v => v + INITIAL_COUNT)}>
-                Load More Projects
-              </button>
+              ))}
             </div>
+          ) : (
+            <>
+              <div className="portfolio-page__grid">
+                {shown.map((item, i) => (
+                  <button
+                    key={item.id}
+                    className="portfolio-page__card"
+                    onClick={() => setLightboxIndex(i)}
+                  >
+                    <img src={item.image} alt={item.title} loading="lazy" />
+                    <div className="portfolio-page__overlay">
+                      <span className="portfolio-card__cat">{item.category}</span>
+                      <h4>{item.title}</h4>
+                      <p>{item.description}</p>
+                      <span className="portfolio-page__view">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                        View
+                      </span>
+                    </div>
+                  </button>
+                ))}
+              </div>
+              {hasMore && (
+                <div className="text-center" style={{ marginTop: '48px' }}>
+                  <button className="btn btn-outline-dark" onClick={() => setVisible(v => v + INITIAL_COUNT)}>
+                    Load More Projects
+                  </button>
+                </div>
+              )}
+            </>
           )}
         </div>
       </section>
@@ -95,6 +110,7 @@ export default function Portfolio() {
           onNext={() => setLightboxIndex(i => (i + 1) % shown.length)}
         />
       )}
+      <PanoramaViewer active={activePano} onClose={() => setActivePano(null)} />
     </>
   );
 }
