@@ -9,7 +9,7 @@ export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
 // ─── Contact ──────────────────────────────────────────────────────────────────
 export const CONTACT_EMAIL = "devnandan3d@gmail.com";
 export const CONTACT_PHONE = "085116 98769";
-export const ADDRESS = "H/ 1402, Orchid Blues Rd, near Applewood, Nandanbag Society, Ullaria, Bopal, Shela, Ahmedabad, Gujarat 380057";
+export const ADDRESS = "Bopal, Shela, Ahmedabad, Gujarat 380057";
 export const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/gbKAkH76AQcjLdw7A";
 export const WORKING_HOURS = "Mon – Sat: 10:00 AM – 7:00 PM";
 
